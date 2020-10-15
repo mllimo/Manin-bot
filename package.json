@@ -1,0 +1,17 @@
+{
+  "name": "bot-discord",
+  "version": "0.0.1",
+  "description": "A discord bot",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "w": "mocha --recursive --watch 'test/*.test.js'",
+    "test": "mocha"
+  },
+  "author": "Antonio Raul Guijarro Contreras",
+  "license": "ISC"
+}
