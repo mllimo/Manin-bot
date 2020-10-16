@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
 const regex = require('./src/regex.js')
-const configMessage = require('./src/config/config-message.js');
-
+const configMessage = require('./src/init/config-message.js');
+const token = require('./config/token.json');
 
 const bot = new Discord.Client();
-const token = 'NzY2MzkyMDExMTMyODk1MjUz.X4isLg.u85GG0w7iHMO_tpwPTwxa39kicY';
 
-bot.login(token);
+bot.login(token.value);
 bot.on('ready', run);
 bot.on('message', message);
 
