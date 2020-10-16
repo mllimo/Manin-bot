@@ -23,7 +23,8 @@ class Queue {
   }
 
   /**
-   * Llama a las promesas de la cola si hay alguna
+   * Llama a las promesas de la cola si hay alguna. Si exceden el tiempo
+   * previsto son rechazadas
    */
   next() {
     this.isRuning_ = true;
@@ -33,7 +34,6 @@ class Queue {
     }
     const action = this.inQueue_.shift();
     new Promise(resolve => {
-      // Either fn() completes or the timeout of 10sec is reached
       action.then(resolve);
       setTimeout(resolve, 5000);
     }).then(() => this.next());
