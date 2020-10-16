@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Message = require('./src/message/message.js');
+const Message = require('./src/message/message-handler.js');
 const regex = require('./src/regex.js')
 
 const bot = new Discord.Client();
