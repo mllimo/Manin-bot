@@ -15,7 +15,7 @@ function run() {
   console.log('Maaa me acabo de despertaar!');
 }
 
-function message (msg) {
+function message(msg) {
   actionQueue.add(configMessage.process, configMessage, msg);
 }
 

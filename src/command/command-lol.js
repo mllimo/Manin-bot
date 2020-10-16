@@ -10,8 +10,8 @@ class CommandLol extends Command {
   }
 
   /**
-   * Comprueba que el mensaje dado es el comando que representa y
-   * si lo es, lo ejecuta.
+   * Al ser ejecutado usa @everyone + la fecha de invocación para llamar a los
+   * usuarios a jugar al lol
    * @param {Message} msg Mensaje del cliente
    * @returns {bool} true si es el comando : si no
    */

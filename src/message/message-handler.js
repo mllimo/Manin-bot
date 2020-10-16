@@ -6,7 +6,7 @@ const regex = require('../regex.js');
 'use strict'
 
 class MessageHandler {
-  constructor(){
+  constructor() {
     this.commands_ = [];
     this.replys_ = [];
   }

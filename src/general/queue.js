@@ -2,19 +2,29 @@
 'use strict'
 
 class Queue {
+
   constructor() {
     this.isRuning_ = false;
     this.inQueue_ = [];
   }
 
+  /**
+   * Añade en la cola una promesa con la función y la ejecuta.
+   * @param {Function} action callback
+   * @param {Object} thisObject this de la función
+   * @param  {...any} argv argumentos de la función
+   */
   add(action, thisObject, ...argv) {
-    this.inQueue_.push( new Promise((resolve) => {
+    this.inQueue_.push(new Promise((resolve) => {
       action.call(thisObject, ...argv);
       resolve('action finished');
     }));
     if (!this.isRuning_) this.next();
   }
 
+  /**
+   * Llama a las promesas de la cola si hay alguna
+   */
   next() {
     this.isRuning_ = true;
     if (this.isEmpty()) {
@@ -29,6 +39,10 @@ class Queue {
     }).then(() => this.next());
   }
 
+  /**
+   * Comprueba si la cola está vacía
+   * @returns {bool} True si la cola está vacía : si no lo está
+   */
   isEmpty() {
     return this.inQueue_.length === 0;
   }
