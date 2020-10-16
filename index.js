@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const regex = require('./src/regex.js')
-const configMessage = require('./src/init/config-message.js');
+const configMessage = require('./src/general/config-message.js');
 const token = require('./config/token.json');
+const Queue = require('./src/general/queue.js');
 
 const bot = new Discord.Client();
+const actionQueue = new Queue();
 
 bot.login(token.value);
 bot.on('ready', run);
@@ -14,6 +16,6 @@ function run() {
 }
 
 function message (msg) {
-  configMessage.process(msg);
+  actionQueue.add(configMessage.process, configMessage, msg);
 }
 
