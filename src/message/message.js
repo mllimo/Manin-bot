@@ -1,11 +1,17 @@
 const Discord = require('discord.js');
 const Reply = require('./reply.js');
 const Command = require('./command.js');
+const regex = require('../regex.js');
+
+'use strict'
 
 class Message {
-  constructor(msg) {
-    new Reply(msg);
-    new Command(msg);
+  static process(msg) {
+    if (regex.COMMAND.test(msg.content)) {
+      Command.process(msg);
+    } else {
+      Reply.process(msg);
+    }
   }
 }
 

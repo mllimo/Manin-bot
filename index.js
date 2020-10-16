@@ -15,5 +15,5 @@ function run() {
 }
 
 function message(msg) {
-
+  Message.process(msg);
 }
