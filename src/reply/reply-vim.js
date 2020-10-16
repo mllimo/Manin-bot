@@ -1,5 +1,6 @@
 const MessageCheck = require('../message/message-check.js');
 const Reply = require('./reply.js');
+const regex = require('../regex.js');
 
 'use strict'
 

@@ -1,5 +1,6 @@
 const Reply = require('../reply/reply.js');
 const Command = require('../command/command.js');
+const MessageCheck = require('./message-check.js');
 const regex = require('../regex.js');
 
 'use strict'
@@ -32,7 +33,7 @@ class MessageHandler {
    * Almacena una reply en la lista de replys
    * @param {Reply} reply reply a guardar
   */
-  StoreReply(reply) {
+  storeReply(reply) {
     this.replys_.push(reply);
   }
 
@@ -51,6 +52,7 @@ class MessageHandler {
    * @param {Message} msg mensaje del cliente
    */
   process(msg) {
+    if (MessageCheck.isBot(msg)) return;
     if (regex.COMMAND.test(msg.content)) {
       this.executeCommand(msg);
     } else {

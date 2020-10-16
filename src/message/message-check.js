@@ -4,9 +4,10 @@ class MessageCheck {
   /**
    * Comprueba que el autor del mensaje no es el propio bot
    * @param {Message} msg Mensaje del cliente
+   * @returns {bool} true si es un bot : si no lo es
    */
   static isBot(msg) {
-    if (msg.author.bot) return;
+    return msg.author.bot;
   }
 
   /**
