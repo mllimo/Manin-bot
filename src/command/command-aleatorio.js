@@ -7,6 +7,10 @@ class CommandAleatorio extends Command {
     super();
   }
 
+  /**
+   * Devuelve un número aleatorio entero entre dos números. !aleatorio numero-numero
+   * @param {Message} msg Mensaje del cliente
+   */
   execute(msg) {
     if (!regex.ALEATORIO_COMMAND.test(msg.content)) return false;
     let min = msg.content.replace(regex.ALEATORIO_COMMAND, '$1');
