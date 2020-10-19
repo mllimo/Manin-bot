@@ -1,7 +1,7 @@
 const Reply = require('../reply/reply.js');
 const Command = require('../command/command.js');
 const MessageCheck = require('./message-check.js');
-const regex = require('../regex.js');
+const regex = require('../general/regex.js');
 
 'use strict'
 

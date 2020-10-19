@@ -1,6 +1,6 @@
 const Command = require('./command.js');
 const MessageCheck = require('../message/message-check.js');
-const regex = require('../regex.js');
+const regex = require('../general/regex.js');
 
 'use strict'
 

@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const regex = require('./src/regex.js')
+const regex = require('./src/general/regex.js')
 const configMessage = require('./src/general/config-message.js');
 const token = require('./config/token.json');
 const Queue = require('./src/general/queue.js');

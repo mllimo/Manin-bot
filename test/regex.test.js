@@ -1,7 +1,7 @@
 const assert = require('assert');
 const chai = require('chai');
 const expect = chai.expect;
-const regex = require('../src/regex.js');
+const regex = require('../src/general/regex.js');
 
 describe('regex', () => {
 
@@ -38,7 +38,20 @@ describe('regex', () => {
       it('No tiene que detectar: lol', () => {
         expect(regex.LOL_COMMAND.test('lolazo')).to.equal(false);
       });
+    });
 
+    describe('!pon', () => {
+      it('Tiene que detectar: !aleatorio 3-5', () => {
+        expect(regex.ALEATORIO_COMMAND.test('!aleatorio 3-5')).to.equal(true);
+      });
+
+      it('Tiene que detectar: !aleatorio 3.5-5', () => {
+        expect(regex.ALEATORIO_COMMAND.test('!aleatorio 3.5-5')).to.equal(true);
+      });
+
+      it('No tiene que detectar: !aleatorio', () => {
+        expect(regex.ALEATORIO_COMMAND.test('!aleatorio')).to.equal(false);
+      });
     });
 
   });

@@ -6,6 +6,7 @@ const ReplyVim = require('../reply/reply-vim.js');
 
 // Commands includes
 const CommandLol = require('../command/command-lol.js');
+const CommandAleatorio = require('../command/command-aleatorio.js');
 // !Commands includes
 
 const configMessage = new MessageHandler();
@@ -16,6 +17,7 @@ configMessage.storeReply(new ReplyVim());
 
 // Commands store
 configMessage.storeCommand(new CommandLol());
+configMessage.storeCommand(new CommandAleatorio());
 // !Commands store
 
 module.exports = configMessage;

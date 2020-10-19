@@ -1,4 +1,4 @@
-const regex = require('../regex.js');
+const regex = require('../general/regex.js');
 
 'use strict'
 
